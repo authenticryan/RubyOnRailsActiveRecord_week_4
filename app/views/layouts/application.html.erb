@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todolists</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if session[:user_id] %>
+  <%= content_tag :p, "logged in as #{User.find(session[:user_id]).username}." %>
+  <%= link_to "Logout", logout_path, method: :delete %>
+<% end %>
+
+
+<%= yield %>
+
+
+<%= console %>
+</body>
+</html>

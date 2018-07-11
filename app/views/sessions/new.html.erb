@@ -1,0 +1,21 @@
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+
+<p><%= notice %></p>
+<p><%= alert %></p>
+
+<%= form_for(:user, url: sessions_path) do |form| %>
+    <p>
+        <%= form.label :username %>
+        <%= form.text_field :username %>
+    </p>
+    
+    <p>
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+    </p>
+
+    <div class="actions">
+        <%= form.submit "Login" %>
+    </div>
+<% end %>
